@@ -49,7 +49,10 @@ export function buscarPorNombre(input: string) {
 	let mensajeProducto;
 	let productoEncontrado = false;
 	productosdb.forEach((element) => {
-		if (input === element.nombre && !productoEncontrado) {
+		if (
+			input.toUpperCase() === element.nombre.toUpperCase() &&
+			!productoEncontrado
+		) {
 			productoEncontrado = true;
 			mensajeProducto = `
 			<p>id:${element.id}</p>
